@@ -17,6 +17,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -42,6 +45,7 @@
     "Maven.rentmanager [clean,install,tomcat7:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/alban/OneDrive/Documents/cours/java/TD4/rentmanager/rentmanager",
     "node.js.detected.package.eslint": "true",
@@ -153,6 +157,7 @@
       <workItem from="1708346128087" duration="9626000" />
       <workItem from="1710162346105" duration="1013000" />
       <workItem from="1710163496509" duration="1645000" />
+      <workItem from="1710165745042" duration="572000" />
     </task>
     <servers />
   </component>
