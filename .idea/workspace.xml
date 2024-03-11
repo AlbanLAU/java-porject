@@ -4,7 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aa790282-3e44-4620-970e-f6d6c1854442" name="Changes" comment="" />
+    <list default="true" id="aa790282-3e44-4620-970e-f6d6c1854442" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT.war" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/lib/spring-aop-5.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/lib/spring-beans-5.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/lib/spring-context-5.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/lib/spring-core-5.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/lib/spring-expression-5.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/lib/spring-jcl-5.1.6.RELEASE.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-epf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-epf.AppTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/surefire-reports/epf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/epf.AppTest.txt" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,11 +55,13 @@
     "Application.listReservation.executor": "Run",
     "Application.listVehicule.executor": "Run",
     "Maven.rentmanager [clean,install,tomcat7:run].executor": "Run",
+    "Maven.rentmanager [clean,install].executor": "Run",
+    "Maven.rentmanager [tomcat7:run].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/alban/OneDrive/Documents/cours/java/TD4/rentmanager/rentmanager",
+    "last_opened_file_path": "C:/Users/alban/Documents/cours/rentmanager",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -58,6 +72,8 @@
 }]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
+      <command value="mvn clean install" />
+      <command value="mvn tomcat7:run" />
       <command value="mvn clean install tomcat7:run" />
     </option>
   </component>
@@ -158,6 +174,7 @@
       <workItem from="1710162346105" duration="1013000" />
       <workItem from="1710163496509" duration="1645000" />
       <workItem from="1710165745042" duration="572000" />
+      <workItem from="1710166584348" duration="793000" />
     </task>
     <servers />
   </component>
