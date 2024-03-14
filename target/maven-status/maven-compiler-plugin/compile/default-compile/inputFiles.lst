@@ -11,6 +11,7 @@ C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\mod
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\servlet\HomeServlet.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\dao\ReservationDao.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\exception\ServiceException.java
+C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\servlet\RentListServlet.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\servlet\VehicleListServlet.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\config\WebConfiguration.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\cli\listIdVehiculeReservation.java
@@ -20,6 +21,7 @@ C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\dao\ClientDao.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\service\ReservationService.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\config\AppConfiguration.java
+C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\servlet\UserListServlet.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\model\Reservation.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\ui\cli\deleteVehicule.java
 C:\Users\alban\Documents\cours\rentmanager\src\main\java\com\epf\rentmanager\persistence\FillDatabase.java

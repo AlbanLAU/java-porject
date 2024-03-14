@@ -13,6 +13,7 @@ com\epf\rentmanager\dao\ReservationDao.class
 com\epf\rentmanager\model\Vehicle.class
 com\epf\rentmanager\dao\ClientDao.class
 com\epf\rentmanager\ui\cli\listIdClientReservation.class
+com\epf\rentmanager\ui\servlet\UserListServlet.class
 com\epf\rentmanager\ui\cli\deleteClient.class
 com\epf\rentmanager\config\WebConfiguration.class
 com\epf\rentmanager\service\ReservationService.class
