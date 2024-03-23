@@ -51,5 +51,14 @@ public class VehicleService {
 			throw new ServiceException(e.getMessage());
 		}
 	}
+
+	public Number count() throws ServiceException {
+		try {
+			List<Vehicle> vehiculeList = vehicleDao.findAll();
+			return vehiculeList.size();
+		} catch (DaoException e) {
+			throw new ServiceException(e.getMessage());
+		}
+	}
 	
 }

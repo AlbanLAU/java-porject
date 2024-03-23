@@ -43,9 +43,6 @@
                                         <td>${reservations.debut()}</td>
                                         <td>${reservations.fin()}</td>
                                         <td>
-                                            <a class="btn btn-primary disabled" href="car-detail.html">
-                                                <i class="fa fa-play"></i>
-                                            </a>
                                             <a class="btn btn-success disabled" href="#">
                                                 <i class="fa fa-edit"></i>
                                             </a>

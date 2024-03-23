@@ -4,8 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.epf.rentmanager.dao.ClientDao;
+import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Client;
+import com.epf.rentmanager.model.Reservation;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -45,6 +47,15 @@ public class ClientService {
 		try {
 			clientDao.delete(client);
 		} catch (Exception e) {
+			throw new ServiceException(e.getMessage());
+		}
+	}
+
+	public Number count() throws ServiceException {
+		try {
+			List<Client> clientList = clientDao.findAll();
+			return clientList.size();
+		} catch (DaoException e) {
 			throw new ServiceException(e.getMessage());
 		}
 	}
