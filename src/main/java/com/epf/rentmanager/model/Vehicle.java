@@ -7,7 +7,7 @@ public record Vehicle(Long id, String constructeur, String modele, int nbPlaces)
     }
 
     public Vehicle(String constructeur, String modele, int nbPlaces){
-        this(null, constructeur, modele, nbPlaces);
+        this(0L, constructeur, modele, nbPlaces);
     }
     public Vehicle(Vehicle vehicle) {
         this(vehicle.id, vehicle.constructeur, vehicle.modele, vehicle.nbPlaces);

@@ -19,7 +19,7 @@ public class VehicleDao {
 
 	private VehicleDao() {}
 	
-	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, nb_places) VALUES(?, ?);";
+	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, modele ,nb_places) VALUES(?, ?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, nb_places FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, nb_places FROM Vehicle;";
@@ -33,7 +33,8 @@ public class VehicleDao {
 			try (Connection connection = ConnectionManager.getConnection();
 				 PreparedStatement ps = connection.prepareStatement(CREATE_VEHICLE_QUERY, Statement.RETURN_GENERATED_KEYS)) {
 				ps.setString(1, vehicle.constructeur());
-				ps.setInt(2, vehicle.nbPlaces());
+				ps.setString(2, vehicle.modele());
+				ps.setInt(3, vehicle.nbPlaces());
 				ps.executeUpdate();
 				ResultSet rs = ps.getGeneratedKeys();
 				if (rs.next()) {
@@ -62,7 +63,7 @@ public class VehicleDao {
 			ps.setLong(1, id);
 			try (ResultSet rs = ps.executeQuery()) {
 				if (rs.next()) {
-					Vehicle vehicle = new Vehicle(rs.getLong("id"), rs.getString("constructeur"), null, rs.getInt("nb_places"));
+					Vehicle vehicle = new Vehicle(rs.getLong("id"), rs.getString("constructeur"), rs.getString("modele"), rs.getInt("nb_places"));
 					return vehicle;
 				}
 			}
@@ -78,7 +79,7 @@ public class VehicleDao {
 				PreparedStatement ps = connection.prepareStatement(FIND_VEHICLES_QUERY)) {
 			try (ResultSet rs = ps.executeQuery()) {
 				while (rs.next()) {
-					Vehicle vehicle = new Vehicle(rs.getLong("id"), rs.getString("constructeur"), null, rs.getInt("nb_places"));
+					Vehicle vehicle = new Vehicle(rs.getLong("id"), rs.getString("constructeur"), rs.getString("modele"), rs.getInt("nb_places"));
 					vehicles.add(vehicle);
 				}
 			}

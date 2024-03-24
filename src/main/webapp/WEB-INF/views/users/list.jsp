@@ -31,6 +31,7 @@
                                     <th>Nom</th>
                                     <th>Prenom</th>
                                     <th>Email</th>
+                                    <th>Naissance</th>
                                     <th>Action</th>
                                 </tr>
 
@@ -40,6 +41,7 @@
                                         <td>${clients.nom()}</td>
                                         <td>${clients.prenom()}</td>
                                         <td>${clients.email()}</td>
+                                        <td>${clients.naissance()}</td>
 
                                         <td>
                                             <a class="btn btn-primary" href="${pageContext.request.contextPath}/users/details?id=${clients.id()}">

@@ -1,5 +1,7 @@
 package com.epf.rentmanager.ui.servlet.rent;
 
+import com.epf.rentmanager.exception.ServiceException;
+import com.epf.rentmanager.model.Vehicle;
 import com.epf.rentmanager.service.ReservationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.context.support.SpringBeanAutowiringSupport;
@@ -30,4 +32,5 @@ public class RentCreateServlet extends HttpServlet {
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/rents/create.jsp").forward(request, response);
     }
+
 }

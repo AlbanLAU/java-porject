@@ -9,6 +9,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Scanner;
 
 public class creerClient {
@@ -34,7 +35,7 @@ public class creerClient {
         Long mois = sc.nextLong();
         System.out.println("l'année : ");
         Long annee = sc.nextLong();
-        LocalDate naissance = LocalDate.of(annee.intValue(), mois.intValue(), jour.intValue());
+        Date naissance = new Date(annee.intValue(), mois.intValue(), jour.intValue());
 
         sc.close();
         Client client = new Client(null, nom, prenom, email, naissance);

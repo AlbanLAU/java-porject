@@ -33,6 +33,7 @@ public class VehicleListServlet extends HttpServlet {
 
         try {
             vehicules = vehicleService.findAll();
+            System.out.println(vehicules);
         } catch (ServiceException e) {
             throw new RuntimeException(e);
         }
