@@ -21,6 +21,7 @@ C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\d
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\persistence\FillDatabase.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\persistence\ConnectionManager.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\service\VehicleService.java
+C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\servlet\rent\RentDeleteServlet.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\exception\DaoException.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\cli\deleteReservation.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\service\ReservationService.java
@@ -29,6 +30,7 @@ C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\u
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\cli\creerVehicule.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\config\WebConfiguration.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\cli\creerClient.java
+C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\servlet\user\UserDeleteServlet.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\servlet\rent\RentListServlet.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\servlet\vehicule\VehicleDeleteServlet.java
 C:\Users\alban\Documents\GitHub\java-porject\src\main\java\com\epf\rentmanager\ui\cli\listReservation.java

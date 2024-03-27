@@ -28,8 +28,11 @@ public class ClientDao {
 	private static final String FIND_CLIENTS_QUERY = "SELECT id, nom, prenom, email, naissance FROM Client;";
 	
 	public long create(Client client) throws DaoException, ServiceException {
-		if (client.nom() == null || client.prenom() == null ){
+		LocalDate eighteenYearsAgo = LocalDate.now().minusYears(18);
+		if (client.nom() == null || client.prenom() == null || client.nom().isEmpty() || client.prenom().isEmpty()) {
 			throw new ServiceException("Le nom et prénom du client ne peuvent pas être null.");
+		} else if (client.naissance().isAfter(eighteenYearsAgo)){
+			throw new ServiceException("Le client doit avoir plus de 18 ans.");
 		} else {
 			try (Connection connection = ConnectionManager.getConnection();
 				 PreparedStatement ps = connection.prepareStatement(CREATE_CLIENT_QUERY, Statement.RETURN_GENERATED_KEYS)) {
