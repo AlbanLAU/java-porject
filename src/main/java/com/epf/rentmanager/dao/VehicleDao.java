@@ -12,23 +12,27 @@ import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Vehicle;
 import com.epf.rentmanager.persistence.ConnectionManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class VehicleDao {
 
 	private VehicleDao() {}
+
+	@Autowired
+	private ReservationDao reservationDao;
 	
 	private static final String CREATE_VEHICLE_QUERY = "INSERT INTO Vehicle(constructeur, modele ,nb_places) VALUES(?, ?, ?);";
 	private static final String DELETE_VEHICLE_QUERY = "DELETE FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLE_QUERY = "SELECT id, constructeur, modele, nb_places FROM Vehicle WHERE id=?;";
 	private static final String FIND_VEHICLES_QUERY = "SELECT id, constructeur, modele, nb_places FROM Vehicle;";
-	
+
 	public long create(Vehicle vehicle) throws DaoException, ServiceException {
 		if (vehicle.constructeur() == null ){
 			throw new ServiceException("Le constructeur du véhicule ne peut pas être null.");
-		} else if (vehicle.nbPlaces() < 1) {
-			throw new ServiceException("Le nombre de place doit être supérieur à 1.");
+		} else if (vehicle.nbPlaces() < 1 || vehicle.nbPlaces() > 10) {
+			throw new ServiceException("Le nombre de place doit être supérieur à 1 et inférieur à 10.");
 		} else {
 			try (Connection connection = ConnectionManager.getConnection();
 				 PreparedStatement ps = connection.prepareStatement(CREATE_VEHICLE_QUERY, Statement.RETURN_GENERATED_KEYS)) {
@@ -51,6 +55,13 @@ public class VehicleDao {
 		try (Connection connection = ConnectionManager.getConnection();
 				PreparedStatement ps = connection.prepareStatement(DELETE_VEHICLE_QUERY)) {
 			ps.setLong(1, vehicle.id());
+			reservationDao.findResaByVehicleId(vehicle.id()).forEach(resa -> {
+				try {
+					reservationDao.delete(resa);
+				} catch (DaoException e) {
+					throw new RuntimeException(e);
+				}
+			});
 			return ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DaoException("Erreur lors de la suppression du véhicule: " + e.getMessage(), e);
@@ -87,8 +98,6 @@ public class VehicleDao {
 			throw new DaoException("Erreur lors de la récupération des véhicules: " + e.getMessage(), e);
 		}
 		return vehicles;
-		
 	}
-	
 
 }

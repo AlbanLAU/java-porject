@@ -7,11 +7,12 @@
     <list default="true" id="aa790282-3e44-4620-970e-f6d6c1854442" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/epf/service/ClientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/epf/service/ClientServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/ReservationDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/ReservationDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/VehicleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/VehicleDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/user/UserDetailsServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/user/UserDetailsServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/details.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/epf/rentmanager/dao/ClientDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epf/rentmanager/dao/ClientDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/epf/service/ClientServiceTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/epf/service/ClientServiceTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/SESSIONS.ser" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/SESSIONS.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/SESSIONS.ser" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +94,7 @@
       <command value="mvn tomcat7:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientServiceTest.create_client_with_null_name">
+  <component name="RunManager" selected="Application.creerReservation">
     <configuration name="creerClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.creerClient" />
       <module name="rentmanager" />
@@ -107,49 +108,41 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="creerReservation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.creerReservation" />
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="epf.service.*" />
+          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="epf.service" />
-      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientServiceTest.client_creation_fails_for_underage_client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="creerVehicule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.creerVehicule" />
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="epf.service.*" />
+          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="epf.service" />
-      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
-      <option name="METHOD_NAME" value="client_creation_fails_for_underage_client" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientServiceTest.count_client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="listReservation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.listReservation" />
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="epf.service.*" />
+          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="epf.service" />
-      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
-      <option name="METHOD_NAME" value="count_client" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -172,11 +165,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClientServiceTest.create_client_with_null_name" />
-        <item itemvalue="JUnit.ClientServiceTest.client_creation_fails_for_underage_client" />
+        <item itemvalue="Application.creerReservation" />
+        <item itemvalue="Application.listReservation" />
+        <item itemvalue="Application.creerVehicule" />
         <item itemvalue="Application.creerClient" />
-        <item itemvalue="JUnit.ClientServiceTest" />
-        <item itemvalue="JUnit.ClientServiceTest.count_client" />
+        <item itemvalue="JUnit.ClientServiceTest.create_client_with_null_name" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +199,7 @@
       <workItem from="1710852767564" duration="48000" />
       <workItem from="1710860304039" duration="21000" />
       <workItem from="1711212068567" duration="22967000" />
-      <workItem from="1711538151839" duration="776000" />
+      <workItem from="1711538151839" duration="5745000" />
     </task>
     <servers />
   </component>

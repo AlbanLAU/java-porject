@@ -42,13 +42,24 @@ public class UserDetailsServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         List<Reservation> reservations = new ArrayList<>();
+        List<Vehicle> vehicles = new ArrayList<>();
+        Client client = null;
 
         try {
             reservations = reservationService.findResaByClientId(Long.parseLong(request.getParameter("id")));
+            client = clientService.findById(Long.parseLong(request.getParameter("id")));
+            for (Reservation resa : reservations) {
+                Vehicle vehicle = vehicleService.findById(resa.vehicleId());
+                if (vehicle != null && !vehicles.contains(vehicle)) {
+                    vehicles.add(vehicle);
+                }
+            }
         } catch (ServiceException e) {
             throw new RuntimeException(e);
         }
 
+        request.setAttribute("client", client);
+        request.setAttribute("vehicles", vehicles);
         request.setAttribute("reservations", reservations);
 
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/users/details.jsp").forward(request, response);

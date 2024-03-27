@@ -15,24 +15,32 @@ import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Client;
 import com.epf.rentmanager.persistence.ConnectionManager;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class ClientDao {
 
 	private ClientDao() {}
+
+	@Autowired
+	private ReservationDao reservationDao;
 	
 	private static final String CREATE_CLIENT_QUERY = "INSERT INTO Client(nom, prenom, email, naissance) VALUES(?, ?, ?, ?);";
 	private static final String DELETE_CLIENT_QUERY = "DELETE FROM Client WHERE id=?;";
 	private static final String FIND_CLIENT_QUERY = "SELECT nom, prenom, email, naissance FROM Client WHERE id=?;";
 	private static final String FIND_CLIENTS_QUERY = "SELECT id, nom, prenom, email, naissance FROM Client;";
-	
+	private static final String FIND_CLIENT_BY_EMAIL_QUERY = "SELECT id FROM Client WHERE email=?;";
 	public long create(Client client) throws DaoException, ServiceException {
 		LocalDate eighteenYearsAgo = LocalDate.now().minusYears(18);
 		if (client.nom() == null || client.prenom() == null || client.nom().isEmpty() || client.prenom().isEmpty()) {
-			throw new ServiceException("Le nom et prénom du client ne peuvent pas être null.");
+			throw new DaoException("Le nom et prénom du client ne peuvent pas être null.");
 		} else if (client.naissance().isAfter(eighteenYearsAgo)){
-			throw new ServiceException("Le client doit avoir plus de 18 ans.");
+			throw new DaoException("Le client doit avoir plus de 18 ans.");
+		} else if (emailExists(client.email())) {
+			throw new DaoException("L'email du client existe déjà.");
+		} else if (client.prenom().length() < 3 || client.nom().length() < 3){
+			throw new DaoException("Le nom et le prenom doivent faire au moins trois caractères.");
 		} else {
 			try (Connection connection = ConnectionManager.getConnection();
 				 PreparedStatement ps = connection.prepareStatement(CREATE_CLIENT_QUERY, Statement.RETURN_GENERATED_KEYS)) {
@@ -56,6 +64,13 @@ public class ClientDao {
 		try (Connection connection = ConnectionManager.getConnection();
 				PreparedStatement ps = connection.prepareStatement(DELETE_CLIENT_QUERY)) {
 			ps.setLong(1, client.id());
+			reservationDao.findResaByClientId(client.id()).forEach(resa -> {
+				try {
+					reservationDao.delete(resa);
+				} catch (DaoException e) {
+					throw new RuntimeException(e);
+				}
+			});
 			return ps.executeUpdate();
 		} catch (SQLException e) {
 			throw new DaoException("Erreur lors de la suppression du client: " + e.getMessage(), e);
@@ -88,6 +103,17 @@ public class ClientDao {
 			throw new DaoException("Erreur lors de la récupération des clients: " + e.getMessage(), e);
 		}
 		return clients;
+	}
+
+	public boolean emailExists(String email) throws DaoException {
+		try (Connection connection = ConnectionManager.getConnection();
+			 PreparedStatement ps = connection.prepareStatement(FIND_CLIENT_BY_EMAIL_QUERY)) {
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			return rs.next();
+		} catch (SQLException e) {
+			throw new DaoException("Erreur lors de la vérification de l'email: " + e.getMessage(), e);
+		}
 	}
 
 }

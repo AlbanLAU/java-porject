@@ -20,14 +20,14 @@
                     <!-- Profile Image -->
                     <div class="box box-primary">
                         <div class="box-body box-profile">
-                            <h3 class="profile-username text-center">John Doe (john.doe@epf.fr)</h3>
+                            <h3 class="profile-username text-center">${client.prenom()} ${client.nom()} (${client.email()})</h3>
 
                             <ul class="list-group list-group-unbordered">
                                 <li class="list-group-item">
                                     <b>Reservation(s)</b> <a class="pull-right">${reservations.size()}</a>
                                 </li>
                                 <li class="list-group-item">
-                                    <b>Voiture(s)</b> <a class="pull-right">3</a>
+                                    <b>Voiture(s)</b> <a class="pull-right">${vehicles.size()}</a>
                                 </li>
                             </ul>
                         </div>
@@ -74,24 +74,14 @@
                                             <th>Constructeur</th>
                                             <th style=>Nombre de places</th>
                                         </tr>
-                                        <tr>
-                                            <td>1.</td>
-                                            <td>Renault</td>
-                                            <td>Clio</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2.</td>
-                                            <td>Peugeot</td>
-                                            <td>206</td>
-                                            <td>5</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3.</td>
-                                            <td>Volkswagen</td>
-                                            <td>Touran</td>
-                                            <td>7</td>
-                                        </tr>
+                                        <c:forEach items="${vehicles}" var="vehicles">
+                                            <tr>
+                                                <td>${vehicles.id()}.</td>
+                                                <td>${vehicles.constructeur()}</td>
+                                                <td>${vehicles.modele()}</td>
+                                                <td>${vehicles.nbPlaces()}</td>
+                                            </tr>
+                                        </c:forEach>
                                     </table>
                                 </div>
                             </div>

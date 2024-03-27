@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.time.LocalDate;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,23 +26,36 @@ public class ReservationDao {
 	private static final String FIND_RESERVATIONS_BY_CLIENT_QUERY = "SELECT id, vehicle_id, debut, fin FROM Reservation WHERE client_id=?;";
 	private static final String FIND_RESERVATIONS_BY_VEHICLE_QUERY = "SELECT id, client_id, debut, fin FROM Reservation WHERE vehicle_id=?;";
 	private static final String FIND_RESERVATIONS_QUERY = "SELECT id, client_id, vehicle_id, debut, fin FROM Reservation;";
-		
+	private static final String FIND_RESERVATIONS_BY_VEHICLE_AND_DATE_QUERY = "SELECT id FROM Reservation WHERE vehicle_id=? AND debut<=? AND fin>=?;";
+	private static final String FIND_RESERVATIONS_BY_VEHICLE_AND_DATE_RANGE_QUERY = "SELECT id FROM Reservation WHERE vehicle_id=? AND ((debut BETWEEN ? AND ?) OR (fin BETWEEN ? AND ?));";
 	public long create(Reservation reservation) throws DaoException {
-		try (Connection connection = ConnectionManager.getConnection();
-				PreparedStatement ps = connection.prepareStatement(CREATE_RESERVATION_QUERY, Statement.RETURN_GENERATED_KEYS)) {
-			ps.setLong(1, reservation.clientId());
-			ps.setLong(2, reservation.vehicleId());
-			ps.setDate(3, Date.valueOf(reservation.debut()));
-			ps.setDate(4, Date.valueOf(reservation.fin()));
-			ps.executeUpdate();
-			ResultSet rs = ps.getGeneratedKeys();
-			if (rs.next()) {
-				return rs.getLong(1);
+		long daysBetween = ChronoUnit.DAYS.between(reservation.debut(), reservation.fin());
+		if (reservation.debut().isAfter(reservation.fin())) {
+			throw new DaoException("La date de début doit être avant la date de fin.");
+		} else if (daysBetween > 7) {
+			throw new DaoException("L'écart entre la date de début et de fin ne peut pas être de plus de 7 jours.");
+		} else if (reservationExistsForVehicleAndDate(reservation.vehicleId(), reservation.debut()) ||
+				reservationExistsForVehicleAndDate(reservation.vehicleId(), reservation.fin())) {
+			throw new DaoException("La voiture est déjà réservée pour cette date.");
+		} else if (reservationExistsForVehicleAndDateRange(reservation.vehicleId(), reservation.debut(), reservation.fin())) {
+			throw new DaoException("La voiture ne peut pas être réservée 30 jours de suite sans pause.");
+		} else {
+			try (Connection connection = ConnectionManager.getConnection();
+					PreparedStatement ps = connection.prepareStatement(CREATE_RESERVATION_QUERY, Statement.RETURN_GENERATED_KEYS)) {
+				ps.setLong(1, reservation.clientId());
+				ps.setLong(2, reservation.vehicleId());
+				ps.setDate(3, Date.valueOf(reservation.debut()));
+				ps.setDate(4, Date.valueOf(reservation.fin()));
+				ps.executeUpdate();
+				ResultSet rs = ps.getGeneratedKeys();
+				if (rs.next()) {
+					return rs.getLong(1);
+				}
+			} catch (SQLException e) {
+				throw new DaoException("Erreur lors de la création de la réservation: " + e.getMessage(), e);
 			}
-		} catch (SQLException e) {
-			throw new DaoException("Erreur lors de la création de la réservation: " + e.getMessage(), e);
+			return 0;
 		}
-		return 0;
 	}
 	
 	public long delete(Reservation reservation) throws DaoException {
@@ -138,5 +152,33 @@ public class ReservationDao {
 			throw new DaoException("Erreur lors de la récupération de la réservation: " + e.getMessage(), e);
 		}
 		return null;
+	}
+
+	public boolean reservationExistsForVehicleAndDate(long vehicleId, LocalDate date) throws DaoException {
+		try (Connection connection = ConnectionManager.getConnection();
+			 PreparedStatement ps = connection.prepareStatement(FIND_RESERVATIONS_BY_VEHICLE_AND_DATE_QUERY)) {
+			ps.setLong(1, vehicleId);
+			ps.setDate(2, Date.valueOf(date));
+			ps.setDate(3, Date.valueOf(date));
+			ResultSet rs = ps.executeQuery();
+			return rs.next();
+		} catch (SQLException e) {
+			throw new DaoException("Erreur lors de la vérification de la réservation: " + e.getMessage(), e);
+		}
+	}
+
+	public boolean reservationExistsForVehicleAndDateRange(long vehicleId, LocalDate startDate, LocalDate endDate) throws DaoException {
+		try (Connection connection = ConnectionManager.getConnection();
+			 PreparedStatement ps = connection.prepareStatement(FIND_RESERVATIONS_BY_VEHICLE_AND_DATE_RANGE_QUERY)) {
+			ps.setLong(1, vehicleId);
+			ps.setDate(2, Date.valueOf(startDate));
+			ps.setDate(3, Date.valueOf(endDate));
+			ps.setDate(4, Date.valueOf(startDate));
+			ps.setDate(5, Date.valueOf(endDate));
+			ResultSet rs = ps.executeQuery();
+			return rs.next();
+		} catch (SQLException e) {
+			throw new DaoException("Erreur lors de la vérification de la réservation: " + e.getMessage(), e);
+		}
 	}
 }
