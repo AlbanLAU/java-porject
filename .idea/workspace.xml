@@ -5,48 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa790282-3e44-4620-970e-f6d6c1854442" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/vehicule/VehicleDeleteServlet.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/epf/service/ClientServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/epf/service/RentServiceTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/epf/service/VoitureServiceTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/ClientDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/ClientDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/VehicleDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/dao/VehicleDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/model/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/model/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/cli/creerClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/cli/creerClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/rent/RentCreateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/rent/RentCreateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/user/UserCreateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/user/UserCreateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/vehicule/VehicleListServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/epf/rentmanager/ui/servlet/vehicule/VehicleListServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rents/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/rents/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/users/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicles/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/vehicles/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epf/rentmanager/dao/VehicleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epf/rentmanager/dao/VehicleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/epf/rentmanager/ui/servlet/vehicule/VehicleListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/epf/rentmanager/ui/servlet/vehicule/VehicleListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT.war" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT.war" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/dao/VehicleDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/dao/VehicleDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/model/Client.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/model/Client.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/persistence/FillDatabase.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/persistence/FillDatabase.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/cli/creerClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/cli/creerClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/rent/RentCreateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/rent/RentCreateServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/user/UserCreateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/user/UserCreateServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/vehicule/VehicleListServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/vehicule/VehicleListServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/vehicule/VehiculeCreateServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/classes/com/epf/rentmanager/ui/servlet/vehicule/VehiculeCreateServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/views/users/create.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/views/users/create.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/views/users/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/views/users/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/views/vehicles/list.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/target/rentmanager-1.0-SNAPSHOT/WEB-INF/views/vehicles/list.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-epf.AppTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-epf.AppTest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/surefire-reports/epf.AppTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/epf.AppTest.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-03-24" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/SESSIONS.ser" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/SESSIONS.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/common/footer_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/common/footer_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/home_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/home_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/users/create_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/users/create_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/users/create_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/users/create_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/users/list_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/users/list_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/vehicles/create_jsp.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/vehicles/create_jsp.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/vehicles/list_jsp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/vehicles/list_jsp.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/vehicles/list_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/WEB_002dINF/views/vehicles/list_jsp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/index_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/rentmanager/org/apache/jsp/index_jsp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/epf/AppTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-03-27" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-03-27" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,36 +36,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.FillDatabase.executor&quot;: &quot;Run&quot;,
-    &quot;Application.creerClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.creerReservation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.creerVehicule.executor&quot;: &quot;Run&quot;,
-    &quot;Application.deleteClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.deleteReservation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.deleteVehicule.executor&quot;: &quot;Run&quot;,
-    &quot;Application.listClient.executor&quot;: &quot;Run&quot;,
-    &quot;Application.listIdClientReservation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.listIdVehiculeReservation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.listReservation.executor&quot;: &quot;Run&quot;,
-    &quot;Application.listVehicule.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.rentmanager [clean,install,tomcat7:run].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.rentmanager [clean,install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.rentmanager [tomcat7:run].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/alban/Documents/GitHub/java-porject&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.FillDatabase.executor": "Run",
+    "Application.creerClient.executor": "Run",
+    "Application.creerReservation.executor": "Run",
+    "Application.creerVehicule.executor": "Run",
+    "Application.deleteClient.executor": "Run",
+    "Application.deleteReservation.executor": "Run",
+    "Application.deleteVehicule.executor": "Run",
+    "Application.listClient.executor": "Run",
+    "Application.listIdClientReservation.executor": "Run",
+    "Application.listIdVehiculeReservation.executor": "Run",
+    "Application.listReservation.executor": "Run",
+    "Application.listVehicule.executor": "Run",
+    "JUnit.ClientServiceTest.create_client_with_valid_data.executor": "Run",
+    "JUnit.RentServiceTest.count_rent.executor": "Run",
+    "JUnit.RentServiceTest.create_rent_with_valid_data.executor": "Run",
+    "JUnit.RentServiceTest.delete_rent.executor": "Run",
+    "JUnit.RentServiceTest.find_all_rents.executor": "Run",
+    "JUnit.RentServiceTest.find_rent_by_client.executor": "Run",
+    "JUnit.RentServiceTest.find_rent_by_id.executor": "Run",
+    "JUnit.RentServiceTest.find_rent_by_vehicle.executor": "Run",
+    "JUnit.VoitureServiceTest.count_cars.executor": "Run",
+    "JUnit.VoitureServiceTest.create_cars_with_valid_data.executor": "Run",
+    "JUnit.VoitureServiceTest.delete_cars.executor": "Run",
+    "JUnit.VoitureServiceTest.find_all_cars.executor": "Run",
+    "JUnit.VoitureServiceTest.find_cars_by_id.executor": "Run",
+    "Maven.rentmanager [clean,install,tomcat7:run].executor": "Run",
+    "Maven.rentmanager [clean,install].executor": "Run",
+    "Maven.rentmanager [tomcat7:run].executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/alban/Documents/GitHub/java-porject",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunAnythingCache">
     <option name="myCommands">
       <command value="mvn clean install" />
@@ -108,79 +86,94 @@
       <command value="mvn tomcat7:run" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.creerReservation">
-    <configuration name="FillDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.persistence.FillDatabase" />
+  <component name="RunManager" selected="JUnit.ClientServiceTest.delete_client">
+    <configuration name="ClientServiceTest.create_client_with_valid_data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epf.rentmanager.persistence.*" />
+          <option name="PATTERN" value="epf.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="epf.service" />
+      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
+      <option name="METHOD_NAME" value="create_client_with_valid_data" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="creerReservation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.creerReservation" />
+    <configuration name="ClientServiceTest.delete_client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
+          <option name="PATTERN" value="epf.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="epf.service" />
+      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
+      <option name="METHOD_NAME" value="delete_client" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="listClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.listClient" />
+    <configuration name="ClientServiceTest.find_all_clients" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
+          <option name="PATTERN" value="epf.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="epf.service" />
+      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
+      <option name="METHOD_NAME" value="find_all_clients" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="listReservation" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.listReservation" />
+    <configuration name="ClientServiceTest.find_client_by_id" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
+          <option name="PATTERN" value="epf.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="epf.service" />
+      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
+      <option name="METHOD_NAME" value="find_client_by_id" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="listVehicule" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.epf.rentmanager.ui.cli.listVehicule" />
+    <configuration name="RentServiceTest.find_rent_by_vehicle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rentmanager" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.epf.rentmanager.ui.cli.*" />
+          <option name="PATTERN" value="epf.service.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="epf.service" />
+      <option name="MAIN_CLASS_NAME" value="epf.service.RentServiceTest" />
+      <option name="METHOD_NAME" value="find_rent_by_vehicle" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.creerReservation" />
-        <item itemvalue="Application.listVehicule" />
-        <item itemvalue="Application.FillDatabase" />
-        <item itemvalue="Application.listReservation" />
-        <item itemvalue="Application.listClient" />
+        <item itemvalue="JUnit.ClientServiceTest.delete_client" />
+        <item itemvalue="JUnit.ClientServiceTest.find_all_clients" />
+        <item itemvalue="JUnit.ClientServiceTest.find_client_by_id" />
+        <item itemvalue="JUnit.ClientServiceTest.create_client_with_valid_data" />
+        <item itemvalue="JUnit.RentServiceTest.find_rent_by_vehicle" />
       </list>
     </recent_temporary>
   </component>
@@ -209,7 +202,7 @@
       <workItem from="1710321927401" duration="2553000" />
       <workItem from="1710852767564" duration="48000" />
       <workItem from="1710860304039" duration="21000" />
-      <workItem from="1711212068567" duration="15303000" />
+      <workItem from="1711212068567" duration="21128000" />
     </task>
     <servers />
   </component>
