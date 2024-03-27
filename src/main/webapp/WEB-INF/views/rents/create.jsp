@@ -25,15 +25,16 @@
                     <!-- Horizontal Form -->
                     <div class="box">
                         <!-- form start -->
-                        <form class="form-horizontal" method="post" action="/rents/create">
+                        <form class="form-horizontal" method="post">
                             <div class="box-body">
                                 <div class="form-group">
                                     <label for="car" class="col-sm-2 control-label">Voiture</label>
 
                                     <div class="col-sm-10">
                                         <select class="form-control" id="car" name="car">
-                                            <option value="1">Renault Clio</option>
-                                            <option value="2">Citroen C2</option>
+                                            <c:forEach items="${vehicles}" var="vehicle">
+                                                <option value="${vehicle.id()}">${vehicle.constructeur()} ${vehicle.modele()}</option>
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>
@@ -42,8 +43,9 @@
 
                                     <div class="col-sm-10">
                                         <select class="form-control" id="client" name="client">
-                                            <option value="1">John Doe</option>
-                                            <option value="2">Jane Doe</option>
+                                            <c:forEach items="${clients}" var="clients">
+                                                <option value="${clients.id()}">${clients.prenom()} ${clients.nom()}</option>
+                                            </c:forEach>
                                         </select>
                                     </div>
                                 </div>
@@ -52,7 +54,7 @@
 
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="begin" name="begin" required
-                                               data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                               data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -60,7 +62,7 @@
 
                                     <div class="col-sm-10">
                                         <input type="text" class="form-control" id="end" name="end" required
-                                               data-inputmask="'alias': 'dd/mm/yyyy'" data-mask>
+                                               data-inputmask="'alias': 'yyyy-mm-dd'" data-mask>
                                     </div>
                                 </div>
                             </div>

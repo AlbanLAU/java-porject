@@ -35,7 +35,7 @@ public class creerClient {
         Long mois = sc.nextLong();
         System.out.println("l'année : ");
         Long annee = sc.nextLong();
-        Date naissance = new Date(annee.intValue(), mois.intValue(), jour.intValue());
+        LocalDate naissance = LocalDate.of(annee.intValue(), mois.intValue(), jour.intValue());
 
         sc.close();
         Client client = new Client(null, nom, prenom, email, naissance);

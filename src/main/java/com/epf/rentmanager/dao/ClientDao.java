@@ -36,7 +36,7 @@ public class ClientDao {
 				ps.setString(1, client.nom().toUpperCase());
 				ps.setString(2, client.prenom());
 				ps.setString(3, client.email());
-				ps.setDate(4, new java.sql.Date(client.naissance().getTime()));
+				ps.setDate(4, Date.valueOf(client.naissance()));
 				ps.executeUpdate();
 				ResultSet rs = ps.getGeneratedKeys();
 				if (rs.next()) {
@@ -65,7 +65,7 @@ public class ClientDao {
 			ps.setLong(1, id);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				return new Client(id, rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getDate("naissance"));
+				return new Client(id, rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getDate("naissance").toLocalDate());
 			}
 		} catch (SQLException e) {
 			throw new DaoException("Erreur lors de la récupération du client: " + e.getMessage(), e);
@@ -79,7 +79,7 @@ public class ClientDao {
 				Statement stmt = connection.createStatement();
 				ResultSet rs = stmt.executeQuery(FIND_CLIENTS_QUERY)) {
 			while (rs.next()) {
-				clients.add(new Client(rs.getLong("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getDate("naissance")));
+				clients.add(new Client(rs.getLong("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"), rs.getDate("naissance").toLocalDate()));
 			}
 		} catch (SQLException e) {
 			throw new DaoException("Erreur lors de la récupération des clients: " + e.getMessage(), e);

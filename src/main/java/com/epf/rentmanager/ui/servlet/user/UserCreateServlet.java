@@ -46,10 +46,10 @@ public class UserCreateServlet extends HttpServlet{
         if (last_name == null || first_name == null || email == null || naissance_str == null) {
             throw new ServletException("Missing parameter: last_name or first_name or email or naissance");
         }
-        Date naissance;
+        LocalDate naissance;
 
         if (naissance_str != null && !naissance_str.isEmpty()) {
-            naissance = new Date(naissance_str);
+            naissance = LocalDate.parse(naissance_str);
             Client client = new Client(0L, last_name, first_name, email, naissance);
             try {
                 clientService.create(client);

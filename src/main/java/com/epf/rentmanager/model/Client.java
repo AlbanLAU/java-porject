@@ -4,13 +4,13 @@ import java.time.LocalDate;
 import java.util.Date;
 
 
-public record Client(Long id, String nom, String prenom, String email, Date naissance) {
+public record Client(Long id, String nom, String prenom, String email, LocalDate naissance) {
 
     public Client() {
-        this(null, null, null, null, new Date((LocalDate.now()).toString()));
+        this(null, null, null, null, LocalDate.now());
     }
     public Client(Long id, String nom, String prenom){
-        this(id, nom, prenom, null, new Date((LocalDate.now()).toString()));
+        this(id, nom, prenom, null, LocalDate.now());
     }
 
     public Client(Client client) {
