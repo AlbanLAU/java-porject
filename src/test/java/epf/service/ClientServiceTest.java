@@ -4,6 +4,7 @@ import com.epf.rentmanager.dao.ClientDao;
 import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Client;
+import com.epf.rentmanager.model.Reservation;
 import com.epf.rentmanager.service.ClientService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -66,5 +67,16 @@ public class ClientServiceTest {
         long result = clientDao.delete(client);
         assertEquals(1L, result);
         verify(clientDao, times(1)).delete(client);
+    }
+
+    @Test
+    public void count_client() throws ServiceException, DaoException {
+        Client client = new Client(1L, "Bob", "Marley", "bob.marley@epfedu.com", LocalDate.of(2002, 12, 12));
+        when(clientDao.findAll()).thenReturn(List.of(client));
+
+        Number result = clientService.count();
+
+        assertEquals(result, 1);
+        verify(clientDao, times(1)).findAll();
     }
 }

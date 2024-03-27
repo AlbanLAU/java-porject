@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aa790282-3e44-4620-970e-f6d6c1854442" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/epf/service/ClientServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/epf/service/RentServiceTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/epf/service/VoitureServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/epf/AppTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-03-27" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/logs/access_log.2024-03-27" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/epf/service/ClientServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/epf/service/ClientServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +44,11 @@
     "Application.listIdVehiculeReservation.executor": "Run",
     "Application.listReservation.executor": "Run",
     "Application.listVehicule.executor": "Run",
+    "JUnit.ClientServiceTest.count_client.executor": "Run",
     "JUnit.ClientServiceTest.create_client_with_valid_data.executor": "Run",
+    "JUnit.ClientServiceTest.delete_client.executor": "Run",
+    "JUnit.ClientServiceTest.find_all_clients.executor": "Run",
+    "JUnit.ClientServiceTest.find_client_by_id.executor": "Run",
     "JUnit.RentServiceTest.count_rent.executor": "Run",
     "JUnit.RentServiceTest.create_rent_with_valid_data.executor": "Run",
     "JUnit.RentServiceTest.delete_rent.executor": "Run",
@@ -86,7 +84,23 @@
       <command value="mvn tomcat7:run" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientServiceTest.delete_client">
+  <component name="RunManager" selected="JUnit.ClientServiceTest.count_client">
+    <configuration name="ClientServiceTest.count_client" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rentmanager" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="epf.service.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="epf.service" />
+      <option name="MAIN_CLASS_NAME" value="epf.service.ClientServiceTest" />
+      <option name="METHOD_NAME" value="count_client" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ClientServiceTest.create_client_with_valid_data" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="rentmanager" />
       <extension name="coverage">
@@ -151,29 +165,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RentServiceTest.find_rent_by_vehicle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="rentmanager" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="epf.service.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="epf.service" />
-      <option name="MAIN_CLASS_NAME" value="epf.service.RentServiceTest" />
-      <option name="METHOD_NAME" value="find_rent_by_vehicle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClientServiceTest.count_client" />
         <item itemvalue="JUnit.ClientServiceTest.delete_client" />
         <item itemvalue="JUnit.ClientServiceTest.find_all_clients" />
         <item itemvalue="JUnit.ClientServiceTest.find_client_by_id" />
         <item itemvalue="JUnit.ClientServiceTest.create_client_with_valid_data" />
-        <item itemvalue="JUnit.RentServiceTest.find_rent_by_vehicle" />
       </list>
     </recent_temporary>
   </component>
@@ -202,7 +200,7 @@
       <workItem from="1710321927401" duration="2553000" />
       <workItem from="1710852767564" duration="48000" />
       <workItem from="1710860304039" duration="21000" />
-      <workItem from="1711212068567" duration="21128000" />
+      <workItem from="1711212068567" duration="21565000" />
     </task>
     <servers />
   </component>
