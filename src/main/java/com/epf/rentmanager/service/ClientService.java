@@ -1,13 +1,11 @@
 package com.epf.rentmanager.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.epf.rentmanager.dao.ClientDao;
 import com.epf.rentmanager.exception.DaoException;
 import com.epf.rentmanager.exception.ServiceException;
 import com.epf.rentmanager.model.Client;
-import com.epf.rentmanager.model.Reservation;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -59,5 +57,12 @@ public class ClientService {
 			throw new ServiceException(e.getMessage());
 		}
 	}
-	
+
+	public void update(Client client) throws ServiceException {
+		try {
+			clientDao.update(client);
+		} catch (DaoException e) {
+			throw new ServiceException(e.getMessage());
+		}
+	}
 }

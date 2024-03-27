@@ -60,5 +60,13 @@ public class VehicleService {
 			throw new ServiceException(e.getMessage());
 		}
 	}
+
+	public void update(Vehicle vehicle) throws ServiceException {
+		try {
+			vehicleDao.update(vehicle);
+		} catch (DaoException e) {
+			throw new ServiceException(e.getMessage());
+		}
+	}
 	
 }

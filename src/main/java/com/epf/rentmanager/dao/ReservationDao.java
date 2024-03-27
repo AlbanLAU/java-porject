@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.epf.rentmanager.exception.DaoException;
+import com.epf.rentmanager.model.Client;
 import com.epf.rentmanager.model.Reservation;
 import com.epf.rentmanager.persistence.ConnectionManager;
 import org.springframework.stereotype.Repository;
@@ -28,6 +29,8 @@ public class ReservationDao {
 	private static final String FIND_RESERVATIONS_QUERY = "SELECT id, client_id, vehicle_id, debut, fin FROM Reservation;";
 	private static final String FIND_RESERVATIONS_BY_VEHICLE_AND_DATE_QUERY = "SELECT id FROM Reservation WHERE vehicle_id=? AND debut<=? AND fin>=?;";
 	private static final String FIND_RESERVATIONS_BY_VEHICLE_AND_DATE_RANGE_QUERY = "SELECT id FROM Reservation WHERE vehicle_id=? AND ((debut BETWEEN ? AND ?) OR (fin BETWEEN ? AND ?));";
+	private static final String UPDATE_RESERVATION_QUERY = "UPDATE Reservation SET client_id=?, vehicle_id=?, debut=?, fin=? WHERE id=?;";
+
 	public long create(Reservation reservation) throws DaoException {
 		long daysBetween = ChronoUnit.DAYS.between(reservation.debut(), reservation.fin());
 		if (reservation.debut().isAfter(reservation.fin())) {
@@ -179,6 +182,20 @@ public class ReservationDao {
 			return rs.next();
 		} catch (SQLException e) {
 			throw new DaoException("Erreur lors de la vérification de la réservation: " + e.getMessage(), e);
+		}
+	}
+
+	public void update(Reservation reservation) throws DaoException {
+		try (Connection connection = ConnectionManager.getConnection();
+			 PreparedStatement ps = connection.prepareStatement(UPDATE_RESERVATION_QUERY)) {
+			ps.setLong(1, reservation.clientId());
+			ps.setLong(2, reservation.vehicleId());
+			ps.setDate(3, Date.valueOf(reservation.debut()));
+			ps.setDate(4, Date.valueOf(reservation.fin()));
+			ps.setLong(5, reservation.id());
+			ps.executeUpdate();
+		} catch (SQLException e) {
+			throw new DaoException("Erreur lors de la mise à jour de la réservation: " + e.getMessage(), e);
 		}
 	}
 }

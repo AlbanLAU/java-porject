@@ -32,6 +32,16 @@ public class UserCreateServlet extends HttpServlet{
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
+        if (request.getParameter("id") != null){
+            try {
+                long id = Long.parseLong(request.getParameter("id"));
+                Client client = clientService.findById(id);
+                request.setAttribute("client", client);
+            } catch (ServiceException e){
+                throw new RuntimeException(e);
+            }
+        }
+
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/users/create.jsp").forward(request, response);
     }
 
@@ -50,14 +60,23 @@ public class UserCreateServlet extends HttpServlet{
 
         if (naissance_str != null && !naissance_str.isEmpty()) {
             naissance = LocalDate.parse(naissance_str);
-            Client client = new Client(0L, last_name, first_name, email, naissance);
-            try {
-                clientService.create(client);
-            } catch (ServiceException e) {
-                throw new RuntimeException(e);
-            }
-            response.sendRedirect(request.getContextPath() + "/users/list");
-        }
 
+            if (request.getParameter("id") != null) {
+                Client client = new Client(Long.parseLong(request.getParameter("id")), last_name, first_name, email, naissance);
+                try {
+                    clientService.update(client);
+                } catch (ServiceException e) {
+                    throw new RuntimeException(e);
+                }
+            } else {
+                Client client = new Client(0L, last_name, first_name, email, naissance);
+                try {
+                    clientService.create(client);
+                } catch (ServiceException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+        response.sendRedirect(request.getContextPath() + "/users/list");
     }
 }

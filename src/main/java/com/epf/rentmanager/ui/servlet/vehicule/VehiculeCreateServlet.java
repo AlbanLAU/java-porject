@@ -30,6 +30,15 @@ public class VehiculeCreateServlet extends HttpServlet {
 
      protected void doGet(HttpServletRequest request, HttpServletResponse response)
              throws ServletException, IOException {
+         if (request.getParameter("id") != null){
+             try {
+                    long id = Long.parseLong(request.getParameter("id"));
+                    Vehicle vehicle = vehiculeService.findById(id);
+                    request.setAttribute("vehicle", vehicle);
+                } catch (ServiceException e){
+                    throw new RuntimeException(e);
+             }
+         }
 
          this.getServletContext().getRequestDispatcher("/WEB-INF/views/vehicles/create.jsp").forward(request, response);
      }
@@ -47,11 +56,22 @@ public class VehiculeCreateServlet extends HttpServlet {
         } else {
             throw new ServletException("Missing parameter: nb_places " + constructeur + " " + modele);
         }
-        Vehicle vehicle = new Vehicle(0L, constructeur, modele, nb_places);
-        try {
-            vehiculeService.create(vehicle);
-        } catch (ServiceException e) {
-            throw new RuntimeException(e);
+
+
+         if (request.getParameter("id") != null){
+             Vehicle vehicle = new Vehicle(Long.parseLong(request.getParameter("id")), constructeur, modele, nb_places);
+            try {
+                vehiculeService.update(vehicle);
+            } catch (ServiceException e){
+                throw new RuntimeException(e);
+            }
+        } else {
+             Vehicle vehicle = new Vehicle(0L, constructeur, modele, nb_places);
+             try {
+                 vehiculeService.create(vehicle);
+             } catch (ServiceException e) {
+                 throw new RuntimeException(e);
+             }
         }
         response.sendRedirect(request.getContextPath() + "/cars/list");
     }

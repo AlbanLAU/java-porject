@@ -55,6 +55,16 @@ public class RentCreateServlet extends HttpServlet {
         request.setAttribute("vehicles", vehicules);
         request.setAttribute("clients", clients);
 
+        if (request.getParameter("id") != null){
+            try {
+                long id = Long.parseLong(request.getParameter("id"));
+                Reservation reservation = reservationService.findById(id);
+                request.setAttribute("reservation", reservation);
+            } catch (ServiceException e){
+                throw new RuntimeException(e);
+            }
+        }
+
         this.getServletContext().getRequestDispatcher("/WEB-INF/views/rents/create.jsp").forward(request, response);
     }
 
@@ -70,10 +80,18 @@ public class RentCreateServlet extends HttpServlet {
             throw new ServletException("Missing parameter: car or client or begin or end");
         }
 
-        try {
-            reservationService.create(new Reservation(null, Long.parseLong(client), Long.parseLong(car), java.time.LocalDate.parse(begin), java.time.LocalDate.parse(end)));
-        } catch (ServiceException e) {
-            throw new RuntimeException(e);
+        if (request.getParameter("id") != null) {
+            try {
+                reservationService.update(new Reservation(Long.parseLong(request.getParameter("id")), Long.parseLong(client), Long.parseLong(car), java.time.LocalDate.parse(begin), java.time.LocalDate.parse(end)));
+            } catch (ServiceException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
+            try {
+                reservationService.create(new Reservation(null, Long.parseLong(client), Long.parseLong(car), java.time.LocalDate.parse(begin), java.time.LocalDate.parse(end)));
+            } catch (ServiceException e) {
+                throw new RuntimeException(e);
+            }
         }
         response.sendRedirect(request.getContextPath() + "/rent/list");
     }
