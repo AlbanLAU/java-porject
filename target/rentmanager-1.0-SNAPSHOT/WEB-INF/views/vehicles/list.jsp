@@ -41,7 +41,7 @@
                                         <td>${vehicle.modele()}</td>
                                         <td>${vehicle.nbPlaces()}</td>
                                         <td>
-                                            <a class="btn btn-success" href="#">
+                                            <a class="btn btn-success" href="${pageContext.request.contextPath}/cars/create?id=${vehicle.id()}">
                                                 <i class="fa fa-edit"></i>
                                             </a>
                                             <a class="btn btn-danger" href="${pageContext.request.contextPath}/cars/delete?id=${vehicle.id()}">

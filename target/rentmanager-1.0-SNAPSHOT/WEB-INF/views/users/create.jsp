@@ -31,28 +31,28 @@
                                     <label for="last_name" class="col-sm-2 control-label">Nom</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Nom">
+                                        <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Nom" value="${client.nom()}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="first_name" class="col-sm-2 control-label">Prenom</label>
 
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Prenom">
+                                        <input type="text" class="form-control" id="first_name" name="first_name" placeholder="Prenom" value="${client.prenom()}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-sm-2 control-label">Email</label>
 
                                     <div class="col-sm-10">
-                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                                        <input type="email" class="form-control" id="email" name="email" placeholder="Email" value="${client.email()}">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="naissance" class="col-sm-2 control-label">Naissance</label>
 
                                     <div class="col-sm-10">
-                                        <input type="date" class="form-control" id="naissance" name="naissance" placeholder="Naissance">
+                                        <input type="date" class="form-control" id="naissance" name="naissance" placeholder="Naissance" value="${client.naissance()}">
                                     </div>
                                 </div>
                             </div>

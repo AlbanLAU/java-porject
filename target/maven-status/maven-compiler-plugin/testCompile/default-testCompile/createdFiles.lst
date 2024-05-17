@@ -1,1 +1,3 @@
-epf\AppTest.class
+epf\service\ClientServiceTest.class
+epf\service\RentServiceTest.class
+epf\service\VoitureServiceTest.class
